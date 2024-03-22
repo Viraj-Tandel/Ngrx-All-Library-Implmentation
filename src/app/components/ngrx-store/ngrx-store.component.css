@@ -1,0 +1,7 @@
+.button-wrapper{
+  display: flex;
+}
+
+.button-wrapper div {
+  padding: 5px;
+}

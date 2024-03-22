@@ -1,0 +1,23 @@
+.table {
+  width: 100%;
+}
+
+.button-group {
+  display: flex;
+}
+
+.todo-information {
+  background-color: #f8f9fa;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.btn-margin {
+  margin-right: 10px;
+}

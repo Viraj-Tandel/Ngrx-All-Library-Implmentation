@@ -1,0 +1,45 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <div class="component-wrapper">
+        <div class="row">
+          <div class="col">
+            <div class="table-wrapper">
+              <table class="table table-striped mb-0">
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th style="width: 50%">Todo</th>
+                    <th>Completed</th>
+                    <th style="width: 40%">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let todo of todoStore.entities()">
+                    <td>{{ todo.id }}</td>
+                    <td>{{ todo.todo }}</td>
+                    <td>{{ todo.completed }}</td>
+                    <td>
+                      <div class="button-group">
+                        <button (click)="removeTodo(todo.id)" class="btn btn-danger btn-margin">Delete</button>
+                        <button *ngIf="!todo.completed" (click)="markAsComplete(todo)" class="btn btn-primary btn-margin">Mark Complete</button>
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="col">
+            <div class="todo-information">
+              <h2 class="text-center">Todo Information</h2>
+              <div>Total Todos: {{ todoStore.entities().length }}</div>
+              <div>Completed Todos: {{ todoStore.completedList() }}</div>
+              <div>Uncompleted Todos: {{ todoStore.unCompletedList() }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

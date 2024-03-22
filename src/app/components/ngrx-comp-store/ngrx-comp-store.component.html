@@ -1,0 +1,25 @@
+<div class="container-fluid">
+  <button class="btn btn-primary mb-3 mt-3" (click)="addNewMatch()">Add New Match</button>
+  <table class="table table-striped mb-0">
+    <thead>
+    <tr>
+      <th>Name</th>
+      <th>Match Type</th>
+      <th>Status</th>
+      <th>Date</th>
+      <th>Teams</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let match of matchList()">
+      <td>{{ match.name }}</td>
+      <td>{{ match.matchType }}</td>
+      <td>{{ match.status }}</td>
+      <td>{{ match.date }}</td>
+      <td>{{ match.teams[0] }} vs {{ match.teams[1] }}</td>
+      <td><button class="btn btn-danger" (click)="deleteMatch(match.id)">DELETE</button></td>
+    </tr>
+    </tbody>
+  </table>
+</div>

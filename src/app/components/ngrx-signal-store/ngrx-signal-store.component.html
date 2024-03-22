@@ -1,0 +1,40 @@
+<div class="container-fluid">
+  <!-- Add margin to the top and bottom of the post count section -->
+  <div class="post-count my-3">
+    <span>Total Posts:</span> <span class="count">{{ postStore.posts().length }}</span>
+  </div>
+
+  <div class="button-wrapper mb-3">
+    <!-- Add margin to the bottom of the button -->
+    <button class="btn btn-success" (click)="addNewPost()">ADD NEW POST</button>
+  </div>
+
+  <div class="table-wrapper">
+    <table class="table table-striped mb-0">
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Action</th>
+      </tr>
+      </thead>
+      <tbody>
+      <!-- Add margin to the top and bottom of each row -->
+      <tr *ngFor="let post of postStore.posts()" class="my-2">
+        <td>{{ post.id }}</td>
+        <td>{{ post.title }}</td>
+        <td>{{ post.body }}</td>
+        <td>
+          <div class="button-wrapper">
+            <div>
+              <!-- Add margin to the bottom of the button -->
+              <button class="btn btn-danger" (click)="deletePost(post.id)">DELETE</button>
+            </div>
+          </div>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

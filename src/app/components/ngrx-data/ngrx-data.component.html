@@ -1,0 +1,29 @@
+<div class="container">
+  <div class="mb-3">
+    <button class="btn btn-primary custom-btn" (click)="addNewPost()">Add Post</button>
+  </div>
+
+  <table class="table table-striped mb-0">
+    <thead>
+    <tr>
+      <th>ID</th>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Action</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let post of postList">
+      <td>{{ post.id }}</td>
+      <td>{{ post.title }}</td>
+      <td>{{ post.body }}</td>
+      <td>
+        <div class="d-flex">
+          <button class="btn btn-danger custom-btn mr-2" (click)="deletePost(post.id)">Delete</button>
+          <a class="btn btn-primary custom-btn" (click)="updatePost(post)" >Edit</a>
+        </div>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+</div>
